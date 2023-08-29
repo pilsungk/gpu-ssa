@@ -163,6 +163,8 @@ int main(int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
+    printf("Number of CUDA threads = %u \n", NTHREADS);
+
     // Execute the SSA kernel
     ssa_kernel<<<dimGrid, dimBlock>>>(states, dev_x_array, dev_finalT_array);
     // device sync might be unnecessary...
